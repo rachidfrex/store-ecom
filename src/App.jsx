@@ -1,19 +1,19 @@
 import "./App.css";
 import Nav from "./components/nav";
-import Header from "./components/header";
-import Products from "./components/products";
-import Categoris from "./components/categoris";
+import Footer from "./components/footer";
+import Home from "./pages/home";
+import ProductDetails from "./pages/product-details";
+import { Routes, Route } from "react-router-dom";
 function App() {
   return (
-  
-      <div className="bg-violet-50">
-        <Nav />
-        <Header />
-        <Categoris />
-        <Products />
-
-      </div>
-    
+    <div className="bg-violet-50">
+      <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+        </Routes>
+      <Footer />
+    </div>
   );
 }
 
